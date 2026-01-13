@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matheus Proensa | Portfólio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --bg:#0f1217;
+      --bg2:#11151b;
+      --card:#0f1217;
+      --text:#ffffff;
+      --muted:#c7c7c7;
+      --primary:#22a4de;
+      --primary2:#1b8cc0;
+      --border:rgba(34,164,222,.6);
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;scroll-behavior:smooth;}
+    body{background-color:var(--bg);color:var(--text);}
+
+    header{
+      display:flex;justify-content:space-between;align-items:center;padding:18px 60px;
+      background-color:rgba(15,18,23,.92);backdrop-filter:blur(8px);position:fixed;width:100%;top:0;z-index:1000;
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    header h1{color:var(--primary);font-size:1.2rem;}
+    nav a{color:var(--text);text-decoration:none;margin-left:18px;font-weight:500;}
+
+    section{padding:90px 60px;}
+    .hero{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding-top:120px;text-align:center}
+    .hero h2{font-size:2.6rem;margin-bottom:10px}
+    .hero p{color:var(--muted);max-width:720px;margin-bottom:26px}
+    .cta-row{display:flex;gap:12px}
+    .btn{background:var(--primary);color:var(--text);padding:12px 22px;border-radius:10px;text-decoration:none;font-weight:600}
+    .btn.outline{background:transparent;border:1px solid rgba(255,255,255,.12)}
+
+    .sobre{display:flex;gap:36px;align-items:center;flex-wrap:wrap;justify-content:center;max-width:1100px;margin:0 auto;padding:40px 0;text-align:left}
+    /* Avatar: fundo transparente, maior e sem corte */
+    .avatar{width:clamp(180px,30vw,340px);height:clamp(180px,30vw,340px);border-radius:50%;display:flex;align-items:center;justify-content:center;overflow:hidden;background:transparent;padding:0;border:none}
+    .avatar img{width:100%;height:100%;object-fit:contain;object-position:center;background:transparent;display:block}
+    .sobre-texto{max-width:720px}
+    .sobre-texto h3{color:var(--primary);margin-bottom:14px}
+    /* uniformizar subtítulos */
+    .portfolio h3, .servicos h3, .contato h3{color:var(--primary);text-align:center;margin-bottom:30px}
+    .sobre-texto p{color:var(--muted);line-height:1.7}
+    .chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .chip{padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.12);font-size:.9rem}
+
+    .portfolio{background:var(--bg2)}
+    .portfolio h3{text-align:center;color:var(--primary);margin-bottom:34px}
+    .projetos{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden}
+    .thumb{height:170px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg, rgba(34,164,222,.3), transparent)}
+    .card-body{padding:16px;color:var(--muted)}
+
+    .servicos h3{text-align:center;color:var(--primary);margin-bottom:30px;font-size:1.6rem}
+    .servicos-container{display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
+    .servico{background:var(--bg2);padding:24px;border-radius:14px;border:1px solid rgba(255,255,255,.06);max-width:320px}
+
+    .contato{text-align:center}
+    .contato h3{color:var(--primary);margin-bottom:10px;font-size:1.6rem}
+    .contato p{color:var(--muted);margin-bottom:20px}
+    .contact-links{display:flex;gap:12px;justify-content:center;margin-bottom:20px}
+    .contact-links a{color:var(--text);text-decoration:none;border:1px solid rgba(255,255,255,.12);padding:10px 14px;border-radius:12px}
+
+    /* Formulário: tornar campos visíveis sobre o fundo escuro */
+    form{display:flex;flex-direction:column;align-items:center;gap:12px;max-width:440px;margin:0 auto}
+    input, textarea{width:100%;padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,0.03);color:var(--text);outline:none}
+    input::placeholder, textarea::placeholder{color:rgba(255,255,255,.5)}
+    input:focus, textarea:focus{box-shadow:0 0 0 4px rgba(34,164,222,.08);border-color:rgba(34,164,222,.6)}
+    button{background:var(--primary);color:var(--text);padding:10px 18px;border-radius:10px;border:none;cursor:pointer;font-weight:700}
+    button:hover{background:var(--primary2)}
+
+    footer{text-align:center;padding:18px;color:#8a8a8a;border-top:1px solid rgba(255,255,255,.06)}
+
+    @media(max-width:820px){header{padding:16px 18px}section{padding:84px 18px}.hero h2{font-size:2.05rem}.avatar{width:220px;height:220px}}
+    @media(max-width:700px){
+      .sobre{flex-direction:column;align-items:center;text-align:center;padding:28px 0}
+      .sobre-texto{max-width:100%}
+    }
+    @media(max-width:520px){nav{display:none}.hero{padding-top:110px}}
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Matheus Proensa</h1>
+    <nav>
+      <a href="#home">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#portfolio">Portfólio</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <h2>Design • Social Media • Iniciando em Front-end</h2>
+    <p>Formado em Design Gráfico e cursando Sistemas de Informação. Experiência com criação de conteúdo, identidade visual e suporte em TI — agora começando a construir interfaces modernas e responsivas.</p>
+    <div class="cta-row">
+      <a class="btn" href="#portfolio">Ver Portfólio</a>
+      <a class="btn outline" href="#contato">Falar comigo</a>
+    </div>
+  </section>
+
+  <section class="sobre" id="sobre">
+    <div class="avatar">
+      <img src="avatar.png" alt="Foto Matheus">
+    </div>
+
+    <div class="sobre-texto">
+      <h3>Sobre mim</h3>
+      <p>Sou o Matheus Proensa, formado em <strong>Design Gráfico</strong> (Uninter, 2021) e estudante de <strong>Sistemas de Informação</strong> (UFN). Trabalhei na Base Aérea de Santa Maria e atuei como Social Media. Gosto de unir o lado criativo com o lado técnico.</p>
+      <div class="chips">
+        <span class="chip">Canva</span>
+        <span class="chip">Figma</span>
+        <span class="chip">Photoshop</span>
+        <span class="chip">WordPress</span>
+        <span class="chip">HTML & CSS</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="portfolio" id="portfolio">
+    <h3>Portfólio</h3>
+    <div class="projetos">
+      <div class="card">
+        <div class="thumb">Projeto 01</div>
+        <div class="card-body">Identidade / Arte</div>
+      </div>
+      <div class="card">
+        <div class="thumb">Projeto 02</div>
+        <div class="card-body">Conteúdo para Redes</div>
+      </div>
+      <div class="card">
+        <div class="thumb">Projeto 03</div>
+        <div class="card-body">Front-end (início)</div>
+      </div>
+      <div class="card">
+        <div class="thumb">Projeto 04</div>
+        <div class="card-body">Projeto extra / Demo</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="servicos" id="servicos">
+    <h3>Serviços</h3>
+    <div class="servicos-container">
+      <div class="servico">Social Media</div>
+      <div class="servico">Design Gráfico</div>
+      <div class="servico">Front-end (em desenvolvimento)</div>
+    </div>
+  </section>
+
+  <section class="contato" id="contato">
+    <h3>Contato</h3>
+    <p>Me chama por aqui — e se quiser, manda uma mensagem pelo formulário.</p>
+    <div class="contact-links">
+      <a href="mailto:matheu.proensa@gmail.com">📧 Email</a>
+      <a href="https://wa.me/5555981292693" target="_blank" rel="noreferrer">💬 WhatsApp</a>
+    </div>
+    <form>
+      <input type="text" placeholder="Nome" required />
+      <input type="email" placeholder="E-mail" required />
+      <textarea rows="5" placeholder="Mensagem" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2026 Matheus Proensa • Portfólio em desenvolvimento</p>
+  </footer>
